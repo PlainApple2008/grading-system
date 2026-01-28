@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <fieldset>
+    <legend>Learner's Information</legend>
+    <label for="student-first-name">First Name: </label>
+    <input id="student-first-name" type="text" placeholder="ex: JUAN">
+    <br>
+    <label for="student-middle-name">Middle Name: </label>
+    <input id="student-middle-name" type="text" placeholder="ex: CALUMPIT">
+    <br>
+    <label for="student-last-name">Last Name: </label>
+    <input id="student-last-name" type="text" placeholder="ex: DELA CRUZ">
+    <br>
+    <label for="student-lrn">LRN: </label>
+    <input id="student-lrn" type="number">
+    <br>
+    <label for="student-birthdate">Date of Birth: </label>
+    <input id="student-birthdate" type="date">
+    <br>
+    <label for="student-shs-admission-date">SHS Admission Date: </label>
+    <input id="student-shs-admission-date" type="date">
+    <br>
+    <label for="student-sex">Sex: </label>
+    <select id="student-sex">
+      <option value="M">MALE</option>
+      <option value="F">FEMALE</option>
+    </select>
+  </fieldset>
+  <fieldset>
+    <legend>Scholastic Record</legend>
+    <label for="student-current-school-name">School:</label>
+    <input id="student-current-school-name" type="text">
+    <br>
+    <label for="student-current-school-id">School ID:</label>
+    <input id="student-current-school-id" type="number">
+    <br>
+    <label for="student-current-grade-level">Grade Level:</label>
+    <select id="student-current-grade-level">
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
+    <br>
+    <label for="student-current-school-year">School Year:</label>
+    <select>
+      <option value="2026-2027">2026-2027</option>
+      <option value="2025-2026">2025-2026</option>
+    </select>
+    <br>
+    <label for="student-current-semester">Semester:</label>
+    <select id="student-current-semester">
+      <option value="FIRST-SEMESTER">1ST</option>
+      <option value="SECOND-SEMESTER">2ND</option>
+    </select>
+    <br>
+    <label for="student-current-section">Section:</label>
+    <select id="student-current-section">
+      <option value="DELPHI">DELPHI</option>
+      <option value="HASKEL">HASKEL</option>
+      <option value="FORTRAN">FORTRAN</option>
+    </select>
+    <br>
+    <label for="student-current-track">Track:</label>
+    <select id="student-current-track">
+      <option value="TVL">TVL</option>
+    </select>
+    <br>
+    <label for="student-current-strand">Strand:</label>
+    <select id="student-current-strand">
+      <option value="ICT">ICT</option>
+    </select>
+    <br>
+  </fieldset>
+  <fieldset class="subject-list">
+    <legend>Subjects</legend>
+    <div id="subject-item">
+      <select>
+        <option value="CORE">CORE</option>
+        <option value="APPLIED">APPLIED</option>
+        <option value="SPECIALIZED">SPECIALIZED</option>
+      </select>
+      <select>
+        <option value="RAWS">Reading and Writing Skills</option>
+        <option value="PHYSICAL-SCIENCE">Physical Science</option>
+        <option value="RDL1">Research in Daily Life 1</option>
+        <option value="RDL2">Research in Daily Life 2</option>
+      </select>
+      <label>Grade Q1:</label>
+      <input type="number" min="0" max="100">
+      <label>Grade Q2:</label>
+      <input type="number" min="0" max="100">
+    </div>
+  </fieldset>
+  <button onclick="addSubject()">+</button>
+  <script src="main.js"></script>
+</body>
+
+</html>
