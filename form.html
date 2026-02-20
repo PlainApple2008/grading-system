@@ -5,10 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Form - Grading System</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="form.css">
 </head>
 
+<!-- form.html contains the form for data inputs -->
+
 <body>
+  <h1>Senior High School Student Permanent Record</h1>
+  <p>All inputs are written in CAPITAL LETTERS</p>
   <fieldset>
     <legend>Learner's Information</legend>
     <label for="student-first-name">First Name: </label>
@@ -34,6 +38,55 @@
       <option value="M">MALE</option>
       <option value="F">FEMALE</option>
     </select>
+  </fieldset>
+  <fieldset>
+    <legend>Eligibility for SHS Enrollment</legend>
+    <span class="inline-group">
+      <label for="input-is-hs-completer">High School Completer</label>
+      <input id="input-is-hs-completer" type="checkbox" />
+    </span>
+    <br>
+    <label for="input-hs-general-average">Gen. Average</label>
+    <input id="input-hs-general-average" type="number" min="0" max="100">
+    <br>
+    <label for="input-is-jhs-completer">Junior High School Completer</label>
+    <input id="input-is-jhs-completer" type="checkbox">
+    <br>
+    <label for="input-jhs-general-average">Gen. Average</label>
+    <input id="input-jhs-general-average" type="number" min="0" max="100">
+    <br>
+    <label for="input-graduation-date">Date of Graduation/Completion: </label>
+    <input id="input-graduation-date" type="date">
+    <br>
+    <label for="input-school-name">Name of School:</label>
+    <input id="input-school-name" type="text">
+    <br>
+    <label for="input-school-address">School Address:</label>
+    <input id="input-school-address" type="text">
+    <br>
+    <label for="input-is-pept-passer">PEPT Passer</label>
+    <input id="input-is-pept-passer" type="checkbox">
+    <br>
+    <label for="input-pept-passer-rating">Rating</label>
+    <input id="input-pept-passer-rating" type="number">
+    <br>
+    <label for="input-is-als-passer">ALS A&E Passer</label>
+    <input id="input-is-als-passer" type="checkbox">
+    <br>
+    <label for="input-als-passer-rating">Rating</label>
+    <input id="input-als-passer-rating" type="number">
+    <br>
+    <label for="input-other-passer-type">Others (Pls. Specify):</label>
+    <input id="input-other-passer-type" type="text">
+    <br>
+    <label for="input-examination-date">Date of Examination/Assessment: </label>
+    <input id="input-examination-date" type="date">
+    <br>
+    <label for="input-community-center-name">Community Center Name: </label>
+    <input id="input-community-center-name" type="text">
+    <br>
+    <label for="input-community-center-address">Community Center Address: </label>
+    <input id="input-community-center-address" type="text">
   </fieldset>
   <fieldset>
     <legend>Scholastic Record</legend>
@@ -79,9 +132,9 @@
     </select>
     <br>
   </fieldset>
-  <fieldset id="subject-list">
+  <fieldset id="subject-profile">
     <legend>Subjects</legend>
-    <div id="subject-item">
+    <!-- <div id="subject-item">
       <select>
         <option value="CORE">CORE</option>
         <option value="APPLIED">APPLIED</option>
@@ -97,9 +150,39 @@
       <input type="number" min="0" max="100">
       <label>Grade Q2:</label>
       <input type="number" min="0" max="100">
-    </div>
+    </div> -->
   </fieldset>
-  <button onclick="addSubject()">+</button>
+  
+  <!-- TODO Implement student record loading -->
+  <!-- TODO Implement student record viewing -->
+  <!--<div>
+    <p>Load another student record</p>
+    <select>
+      <option></option>
+    </select>
+  </div>-->
+  <div>
+    <button>Update changes</button>
+  </div>
+  <div>
+    <p>View existing student record</p>
+    <label>Name:</label>
+    <select>
+      <option>Daniel</option>
+      <option>Derrick</option>
+      <option>Derrick</option>
+      <option>Derrick</option>
+      <option>Derrick</option>
+      <option>Derrick</option>
+      <option>Derrick</option>
+      <option>Derrick</option>
+      <option>Derrick</option>
+      <option>Derrick</option>
+      <option>Derrick</option>
+    </select>
+    <button onclick="viewStudentRecord()">View</button>
+  </div>
+  <!-- <button onclick="addSubject()">+</button> -->
   <script src="main.js"></script>
 </body>
 

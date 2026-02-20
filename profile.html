@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profiles - Grading System</title>
+  <link rel="stylesheet" href="./defaults.css">
+  <link rel="stylesheet" href="./theme.css">
+  <style>
+  
+  
+    #profile-view {
+      margin: auto;
+      width: 100%;
+      height: 30vh;
+      background-color: lightgray;
+      border: 3px solid black;
+    }
+  </style>
+</head>
+
+<!-- profile.html contains the saved subject profiles -->
+
+<body>
+  <select id="profile-selection">
+    <option>Profile Name</option>
+  </select>
+  <div id="profile-view">
+    <!--List the subjects here-->
+  </div>
+  <!-- Interface for controls-->
+  <div id="controls">
+    <button onclick="deleteCurrenProfile()">Delete current</button>
+    <button onclick="createProfile()">New profile</button>
+    <button onclick="saveCurrentChanges()">Save changes</button>
+  </div>
+  <script src="./profile.js"></script>
+</body>
+
+</html>

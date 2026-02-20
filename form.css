@@ -1,0 +1,48 @@
+:root {
+    --form-margin-bottom-inputs: 1.2rem;
+}
+
+body {
+    font-size: 15pt;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    overflow: auto;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+span.inline-group {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+/* TODO Create variable --margin-bottom-inputs = 1.2rem */
+
+select {
+    margin-bottom: var(--form-margin-bottom-inputs);
+}
+
+select:last-child {
+    margin-bottom: 1.5rem;
+}
+
+input {
+    display: inline-block;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+    margin-bottom: var(--form-margin-bottom-inputs);
+    font-size: 1.2rem;
+}
+
+input:not([type="checkbox"]) {
+    min-width: 10rem;
+}

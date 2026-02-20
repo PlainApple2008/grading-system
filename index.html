@@ -6,14 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home - Grading System</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="defaults.css">
+  <link rel="stylesheet" href="theme.css">
   <style>
-    :root {
-      --theme-color-accent: #FF7378;
-      --theme-color-primary: #72D4FF;
-    }
-    
-    #btn-start {
+    #btn-start,
+    button {
       display: block;
       margin: auto;
       background-color: var(--theme-color-primary);
@@ -25,21 +22,53 @@
       font-weight: bold;
     }
     
-    h1 {
+    h1,
+    h2 {
       text-align: center;
-      margin-top: 30vh;
     }
     
     p {
       text-align: center;
     }
+    
+    .group-btn {
+      display: flex;
+      flex-flow: column;
+      row-gap: 1rem;
+      width: max-content;
+      /* Make it stretch to the largest of widths*/
+      margin: auto;
+      /* Center the container */
+    }
+    
+    .group-btn button {
+      background-color: var(--theme-color-primary);
+      border: none;
+      padding: 0.7rem 1rem;
+      border-radius: 0.3rem;
+      letter-spacing: 0.1rem;
+      font-family: monospace;
+      font-weight: bold;
+      width: 100%;
+      user-select: none;
+    }
+    
+    .group-btn button:active {
+      filter: brightness(0.8);
+      transition: filter 0.3;
+    }
   </style>
 </head>
 
 <body>
-  <h1>Grading System</h1>
-  <p>Welcome to the grading system!</p>
-  <button id="btn-start" class="navigate" onclick="navigate('./form.html')">Start</button>
+  <h1>HOME</h1>
+  <h2>Grading System</h2>
+  <!-- <button id="btn-start" class="navigate" onclick="navigate('./form.html')">Start</button> -->
+  <div class="group-btn">
+    <button id="btn-load-record" onclick="navigate('./form.html')">Load Student Record</button>
+    <button id="btn-new-record">New Student Record</button>
+    <button id="btn-goto-subject-profiles">Subject Profiles</button>
+  </div>
   <script src="main.js"></script>
 </body>
 

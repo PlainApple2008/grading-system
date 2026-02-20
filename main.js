@@ -1,3 +1,6 @@
+const SUBJECT_TYPES = ["CORE", "APPLIED", "SPECIALIZED"];
+const SUBJECTS = ["Computer Programming (.NET)", "Physical Science", "Reading and Writing Skills", "Statistics and Probability", "Health Optimization and Physical Education"];
+
 /**
  * Navigates to the specified {@code path}
  * 
@@ -7,24 +10,23 @@ function navigate(path = "./index.html") {
   window.location.href = path;
 }
 
+// $ This method might be unnecessary for now
 function addSubject() {
   // Create Subject Type Selection
   let select_type = document.createElement("select");
-  const subjectTypeList = ["CORE", "APPLIED", "SPECIALIZED"];
-  for (let i = 0; i < subjectTypeList.length; i++) {
+  for (let i = 0; i < SUBJECT_TYPES.length; i++) {
     let option = document.createElement("option");
-    option.value = subjectTypeList[i];
-    option.innerText = subjectTypeList[i]
+    option.value = SUBJECT_TYPES[i];
+    option.innerText = SUBJECT_TYPES[i]
     select_type.appendChild(option);
   }
   
   // Create Subject Selection
   let select_subject = document.createElement("select");
-  const subjectList = ["Computer Programming (.NET)", "Physical Science", "Reading and Writing Skills", "Statistics and Probability", "Health Optimization and Physical Education"];
-  for (let i = 0; i < subjectList.length; i++) {
+  for (let i = 0; i < SUBJECTS.length; i++) {
     let option = document.createElement("option");
-    option.value = subjectList[i];
-    option.innerText = subjectList[i];
+    option.value = SUBJECTS[i];
+    option.innerText = SUBJECTS[i];
     select_subject.appendChild(option);
   }
   
