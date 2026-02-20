@@ -8,14 +8,44 @@
   <link rel="stylesheet" href="./defaults.css">
   <link rel="stylesheet" href="./theme.css">
   <style>
-  
-  
     #profile-view {
       margin: auto;
       width: 100%;
       height: 30vh;
       background-color: lightgray;
       border: 3px solid black;
+      
+    }
+    
+    #profile-view {
+      overflow-y: scroll;
+    }
+    
+    #btn-open-add-subject-interface {
+      position: sticky;
+      
+      top: 0px;
+    }
+    
+    #group-add-subject-interface {
+      display: none;
+      position: fixed;
+      background-color: var(--theme-color-accent);
+      padding: 0.3rem;
+    }
+    
+    .subject {
+      /* margin-top: 1.2rem; */
+      padding: 0.6rem;
+    }
+    
+    .subject:nth-child(odd) {
+      background-color: var(--theme-color-background-light);
+    }
+    
+    .subject p {
+      margin: 0;
+      display: inline-block;
     }
   </style>
 </head>
@@ -24,14 +54,44 @@
 
 <body>
   <select id="profile-selection">
-    <option>Profile Name</option>
+    <option value="{name: 'profile 1', subs: ['sub 1', 'sub 2']}">profile 1</option>
   </select>
   <div id="profile-view">
+    <button id="btn-open-add-subject-interface" onclick="openAddSubjectInterface()">Add Subject</button>
+    <div id="group-add-subject-interface">
+      <label>Enter Subject Name:</label>
+      <input id="input-new-subject-name" type="text" pattern="[A-Za-z0-9]">
+      <br>
+      <button onclick="createSubject()">Confirm Add</button>
+      <button onclick="closeAddSubjectInterface()">Close</button>
+    </div>
+    <div id="subject-list">
+      <div class="subject">
+        <p>COMPUTER PROGRAMMING</p>
+        <button onclick="deleteThisSubject(this.parent)">X</button>
+      </div>
+      <div class="subject">
+        <p>COMPUTER PROGRAMMING</p>
+        <button onclick="deleteThisSubject(this.parent)">X</button>
+      </div>
+      <div class="subject">
+        <p>COMPUTER PROGRAMMING</p>
+        <button onclick="deleteThisSubject(this.parent)">X</button>
+      </div>
+      <div class="subject">
+        <p>COMPUTER PROGRAMMING</p>
+        <button onclick="deleteThisSubject(this.parent)">X</button>
+      </div>
+      <div class="subject">
+        <p>COMPUTER PROGRAMMING</p>
+        <button onclick="deleteThisSubject(this.parent)">X</button>
+      </div>
+    </div>
     <!--List the subjects here-->
   </div>
   <!-- Interface for controls-->
   <div id="controls">
-    <button onclick="deleteCurrenProfile()">Delete current</button>
+    <button onclick="deleteCurrenProfile()">Delete current profile</button>
     <button onclick="createProfile()">New profile</button>
     <button onclick="saveCurrentChanges()">Save changes</button>
   </div>
