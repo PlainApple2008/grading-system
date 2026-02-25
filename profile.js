@@ -12,6 +12,10 @@ function loadSavedProfiles() {
   
 }
 
+function loadProfile(profileName) {
+  
+}
+
 
 // Interface controls
 function openAddSubjectInterface() {
@@ -21,6 +25,15 @@ function openAddSubjectInterface() {
 function closeAddSubjectInterface() {
   // Close interface
   document.querySelector("#group-add-subject-interface").style.display = "none";
+}
+
+function openCreateProfileInterface() {
+  document.querySelector("#group-create-profile-interface").style.display = "block";
+}
+
+function closeCreateProfileInterface() {
+  // Close interface
+  document.querySelector("#group-create-profile-interface").style.display = "none";
 }
 
 function createSubject() {
@@ -61,12 +74,12 @@ function createSubject() {
   sublist.appendChild(div);
   
   // Clear input
-document.querySelector("#input-new-subject-name").value = "";
-
+  document.querySelector("#input-new-subject-name").value = "";
+  
   closeAddSubjectInterface();
 }
 
-function viewProfile() {
+function selectProfile(profileName) {
   
 }
 
@@ -75,9 +88,42 @@ function deleteCurrentProfile() {
 }
 
 function createProfile() {
+  let profileName = document.querySelector("#input-new-profile-name").value;
   
+  let profileNameIsEmpty = profileName.trim().length === 0;
+  
+  if (profielNameIsEmpty) {
+    alert("Please enter a name for creating new profile");
+    return;
+  }
+  
+  let option = document.createElement("option");
+  option.value = profileName;
+  option.textContent = profileName;
+  
+  document.querySelector("#profile-selection").appendChild(option);
+  
+  let newProfile = { name: profileName, subjectList: [] };
+  
+  setData(DataConstants.KEY_PROFILES, JSON.stringify(newProfile));
+  
+  closeCreateProfileInterface();
 }
 
 function saveCurrentChanges() {
   
 }
+
+function init() {
+  let select = document.querySelector("#profile-selection");
+  
+  select.addEventListener("change", (event) => {
+    selectProfile(event.target.value);
+    console.log("profile selected" + event.target.value);
+  });
+  
+  console.log("profile.js: init");
+}
+
+loadSavedProfiles();
+init();

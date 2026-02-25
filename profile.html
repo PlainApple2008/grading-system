@@ -27,7 +27,15 @@
       top: 0px;
     }
     
-    #group-add-subject-interface {
+    /* #group-add-subject-interface {
+      display: none;
+      position: fixed;
+      background-color: var(--theme-color-accent);
+      padding: 0.3rem;
+    } */
+    
+    /*#group-add-subject-interface {*/
+    .popup-interface {
       display: none;
       position: fixed;
       background-color: var(--theme-color-accent);
@@ -54,11 +62,11 @@
 
 <body>
   <select id="profile-selection">
-    <option value="{name: 'profile 1', subs: ['sub 1', 'sub 2']}">profile 1</option>
+    <option value="profile 1">profile 1</option>
   </select>
   <div id="profile-view">
     <button id="btn-open-add-subject-interface" onclick="openAddSubjectInterface()">Add Subject</button>
-    <div id="group-add-subject-interface">
+    <div id="group-add-subject-interface" class="popup-interface">
       <label>Enter Subject Name:</label>
       <input id="input-new-subject-name" type="text" pattern="[A-Za-z0-9]">
       <br>
@@ -92,9 +100,17 @@
   <!-- Interface for controls-->
   <div id="controls">
     <button onclick="deleteCurrenProfile()">Delete current profile</button>
-    <button onclick="createProfile()">New profile</button>
+    <button onclick="openCreateProfileInterface()">New profile</button>
+    <div id="group-create-profile-interface" class="popup-interface">
+      <label>Enter Profile Name:</label>
+      <input id="input-new-profile-name" type="text" pattern="[A-Za-z0-9]">
+      <br>
+      <button onclick="createProfile()">Confirm Add</button>
+      <button onclick="closeCreateProfileInterface()">Close</button>
+    </div>
     <button onclick="saveCurrentChanges()">Save changes</button>
   </div>
+  <script src="./io.js"></script>
   <script src="./profile.js"></script>
 </body>
 

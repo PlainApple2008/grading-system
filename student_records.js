@@ -17,7 +17,7 @@ class Student {
 }
 
 class LearnerInfo {
-  firstName =  "";
+  firstName = "";
   middleName = "";
   lastName = "";
   LRN = 0;
@@ -27,6 +27,9 @@ class LearnerInfo {
   
   constructor() {
     
+  }
+  aggregate(val, i) {
+    this[i] = val;
   }
 }
 

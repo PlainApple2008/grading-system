@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Create</title>
+  <link rel="stylesheet" href="defaults.css">
+  <link rel="stylesheet" href="theme.css">
+  
+  <style>
+    div.flex,
+    div.flex-row {
+      display: flex;
+      flex-flow: column;
+      width: min(50%, 200px);
+      margin: auto;
+      row-gap: 10px;
+    }
+    
+    div.flex-row {
+      flex-flow: row;
+      column-gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    
+    input {
+      display: inline-block;
+    }
+    
+    h1,
+    h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>STUDENT RECORD MANAGEMENT SYSTEM</h1>
+  <h2>Create New Student</h2>
+  <div class="flex">
+    <input id="input-fn" type="text" placeholder="First Name">
+    <input id="input-mn" type="text" placeholder="Middle Name">
+    <input id="input-ln" type="text" placeholder="Last Name">
+    <input id="input-lrn" type="number" placeholder="LRN">
+  </div>
+  <div class="flex-row">
+    <button onclick="createNewStudent()">Save</button>
+    <button onclick="showStudents()">Show</button>
+    <button onclick="window.location.href='./index.html'">Cancel</button>
+  </div>
+  <script src="io.js"></script>
+  <script src="student_records.js"></script>
+  <script>
+    function showStudents() {
+      alert(getData("students"));
+    }
+    
+    function createNewStudent() {
+    
+      let studentList = JSON.parse(getData("students"));
+      
+      if (studentList === null) {
+        studentList = [];
+      }
+      
+      student = new Student();
+      
+      student.info = new LearnerInfo();
+      
+      student.info.firstName = document.querySelector("#input-fn").value;
+      student.info.middleName = document.querySelector("#input-mn").value;
+      student.info.lastName = document.querySelector("#input-ln").value;
+      student.info.LRN = document.querySelector("#input-lrn").value;
+      
+      studentList.push(student);
+      
+      setData("students", JSON.stringify(studentList));
+      
+      alert("New Student Created!");
+    }
+  </script>
+</body>
+
+</html>

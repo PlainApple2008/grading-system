@@ -1,0 +1,9 @@
+TODO:
+[] Implement Student Record Creation
+
+AGENDA:
+[] Subject Profile System
+[] Student View page
+[] Student Search page
+[] Student Update Scholastic Record page
+[] Student Update Learner Info page

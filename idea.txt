@@ -1,0 +1,13 @@
+Student Data:
+
+- Learner Info
+- Scholastic Record
+
+Pages:
+- Editor Learner Info
+- Editor Scholastic Records
+- Home
+- Subject Profiles
+- Search Student by ID
+- Student List
+- Add New Student
