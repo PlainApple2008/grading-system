@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+	require "./connections/db_connect.php";
+	require "./connections/db.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +30,8 @@
 	<h2>Search Student Record</h2>
 	<div id="input-container">
 		<div>
-			<label id="label-search-student" for="input-search-student">Search:</label>
+			
+			<!-- <label id="label-search-student" for="input-search-student">Search:</label> -->
 			<input id="input-search-student" type="text">
 		</div>
 	</div>
